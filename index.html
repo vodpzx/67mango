@@ -1,0 +1,212 @@
+  <!-- Background video (optional). Keep it first so it's behind everything -->
+  <video id="bgVideo" autoplay muted loop playsinline preload="metadata" class="bg-video" aria-hidden="true">
+    <source src="video.mp4" type="video/mp4">
+    <!-- fallback -->
+  </video>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>67 • Archive — Origins & Aftermath</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <meta name="color-scheme" content="dark">
+</head>
+<body>
+  <!-- Background video removed as requested -->
+
+  <!-- Particle canvas sits over the video -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <!-- UI overlay -->
+  <header class="topbar" role="banner">
+    <div class="brand">
+      <!-- Logo slot: replace logo.svg with your own. If missing, a styled fallback will show -->
+      <img id="logo" src="logo.svg" alt="67 logo" onerror="this.style.display='none'">
+      <div class="logo-fallback" aria-hidden="true">67</div>
+      <span class="brand-text">67 • Archive</span>
+    </div>
+
+    <nav class="nav" role="navigation" aria-label="Primary">
+      <button class="nav-link active" data-target="home">Home</button>
+      <button class="nav-link" data-target="origins">Origins</button>
+      <button class="nav-link" data-target="risefall">Rise & Fall</button>
+      <button class="nav-link" data-target="gallery">Gallery</button>
+      <button class="nav-link" data-target="contact">Contact</button>
+    </nav>
+
+    <!-- audio controls (hidden if no audio) -->
+    <div class="media-controls" aria-hidden="false">
+      <button id="audio-toggle" class="icon-btn" title="Play ambient" aria-pressed="false">▶</button>
+      <button id="video-toggle" class="icon-btn" title="Toggle video">🎞</button>
+    </div>
+  </header>
+
+  <main class="container" id="main" role="main">
+    <!-- HOME -->
+    <section id="home" class="card section" tabindex="-1" aria-labelledby="home-title">
+      <div class="intro-grid">
+        <div class="intro-left glass">
+          <h1 id="home-title" class="title">67</h1>
+          <p class="subtitle">A purposeful archive: how the “67” meme appeared, propagated, and left traces. This site is designed as a memetic dossier with a premium dark-future UI.</p>
+
+          <div class="cta-row">
+            <a class="btn" href="#origins">Explore Origins</a>
+            <button class="btn alt" id="play-sample">Play sample audio</button>
+          </div>
+        </div>
+
+        <div class="intro-right">
+          <!-- three flip/expand cards -->
+          <div class="card-row">
+            <article class="flip-card" data-target="origins" tabindex="0">
+              <div class="flip-inner">
+                <div class="flip-front glass">
+                  <h3>Origins</h3>
+                  <p>How it began — seed mechanisms and early spread.</p>
+                </div>
+                <div class="flip-back glass">
+                  <h3>Origins</h3>
+                  <p>Minimal signifiers, intentional seeding, and algorithmic nudges that helped it propagate.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="flip-card" data-target="risefall" tabindex="0">
+              <div class="flip-inner">
+                <div class="flip-front glass">
+                  <h3>Peak Era</h3>
+                  <p>When it gained momentum and mutated.</p>
+                </div>
+                <div class="flip-back glass">
+                  <h3>Peak Era</h3>
+                  <p>Bridges, algorithms, remix culture — how the meme scaled across communities.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="flip-card" data-target="gallery" tabindex="0">
+              <div class="flip-inner">
+                <div class="flip-front glass">
+                  <h3>Legacy</h3>
+                  <p>What remains after the noise fades.</p>
+                </div>
+                <div class="flip-back glass">
+                  <h3>Legacy</h3>
+                  <p>Archived artifacts, inside-jokes, and cultural residue for future analysis.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ORIGINS -->
+    <section id="origins" class="card section" tabindex="-1" aria-labelledby="origins-title">
+      <h2 id="origins-title">Origins — Probable seeding and initial dynamics</h2>
+      <div class="content-grid">
+        <div class="glass article">
+          <h3>Hypothesis: Minimal signifier, maximal curiosity</h3>
+          <p>
+            Numeric memes like <em>“67”</em> thrive because they are minimal — easily reproduced, ambiguous, and therefore highly generative. Ambiguity invites interpretation: is it a reference to a year, an inside joke, coordinates, or a deliberate anti-message? That uncertainty creates an invitation to participate.
+          </p>
+          <h4>Seed scenarios</h4>
+          <ol>
+            <li><strong>Intentional seeding</strong>: a micro-influencer or group uses it as a codeword.</li>
+            <li><strong>Accidental</strong>: a screenshot or caption copy spreads without context.</li>
+            <li><strong>Algorithmic nudging</strong>: early engagement pushes content into recommendations.</li>
+          </ol>
+        </div>
+
+        <aside class="glass aside">
+          <h4>Memetic properties</h4>
+          <ul>
+            <li>Low production cost</li>
+            <li>Interpretive depth</li>
+            <li>Combinatorial capacity</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- RISE & FALL -->
+    <section id="risefall" class="card section" tabindex="-1" aria-labelledby="risefall-title">
+      <h2 id="risefall-title">Rise & Fall — The memetic lifecycle</h2>
+      <div class="content-grid">
+        <article class="glass article">
+          <h3>The Rise — mechanics of amplification</h3>
+          <p>
+            Network bridges, algorithmic loops, and performative mutation drove the spread.
+          </p>
+          <h3>The Fall — entropy and exhaustion</h3>
+          <ul>
+            <li>Mutation breakdown</li>
+            <li>Co-option</li>
+            <li>Platform friction</li>
+          </ul>
+        </article>
+
+        <aside class="glass aside">
+          <h4>Aftermath</h4>
+          <p>Traces remain, forming material for memetic archaeology.</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="card section" tabindex="-1" aria-labelledby="gallery-title">
+      <h2 id="gallery-title">Gallery — Variants & artifacts</h2>
+      <div class="gallery-grid">
+        <figure class="image-card glass">
+          <div class="img-placeholder">67</div>
+          <figcaption>Minimal typographic variant</figcaption>
+        </figure>
+        <figure class="image-card glass">
+          <div class="img-placeholder">GLITCH 67</div>
+          <figcaption>Glitch edit</figcaption>
+        </figure>
+        <figure class="image-card glass">
+          <div class="img-placeholder">BADGE 67</div>
+          <figcaption>Badge / sigil</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="card section" tabindex="-1" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact — Submit artifacts</h2>
+      <form id="contact-form" class="glass form" novalidate>
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" placeholder="Your name" required minlength="2" />
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="you@example.com" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" placeholder="Describe the artifact..." required minlength="10"></textarea>
+
+        <div class="form-row">
+          <button type="submit" class="btn">Send</button>
+          <button type="button" id="save-draft" class="btn alt">Save draft</button>
+        </div>
+
+        <p id="form-status" class="muted" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <footer class="footer">
+      <small>© <span id="year"></span> 67 • Archive</small>
+      <div class="credits muted">Made with matte black aesthetics, depth shading & reactive UI.</div>
+    </footer>
+  </main>
+
+  <!-- Ambient audio (optional) -->
+  <audio id="ambient-audio" loop preload="none">
+    <source src="video.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
